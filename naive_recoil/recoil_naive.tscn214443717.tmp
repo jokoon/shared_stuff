@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://buqbuckuwnqi0"]
+
+[ext_resource type="Script" path="res://recoil_naive.gd" id="1_2s87s"]
+[ext_resource type="Texture2D" uid="uid://tacjcvb2x6v" path="res://texture_ui/cursor_543.png" id="1_nc6pk"]
+[ext_resource type="Texture2D" uid="uid://ek3i0w2vj4e1" path="res://texture_ui/crosshair_4px_green.png" id="2_2s87s"]
+[ext_resource type="PackedScene" path="res://diagnose.tscn" id="3_chtls"]
+[ext_resource type="AudioStream" uid="uid://npp3i8l1s7b7" path="res://mp5-1.wav" id="4_crpvh"]
+
+[node name="Node2D" type="Node2D" unique_id=1008793860]
+script = ExtResource("1_2s87s")
+
+[node name="crosshair" type="Sprite2D" parent="." unique_id=1476692339]
+texture_filter = 1
+position = Vector2(8, 11)
+texture = ExtResource("1_nc6pk")
+
+[node name="center" type="Sprite2D" parent="." unique_id=750170766]
+texture_filter = 1
+position = Vector2(118, 361)
+texture = ExtResource("1_nc6pk")
+
+[node name="feedbacked" type="Node2D" parent="." unique_id=2060819480]
+position = Vector2(293, 331)
+
+[node name="center4" type="Sprite2D" parent="feedbacked" unique_id=709658972]
+texture = ExtResource("2_2s87s")
+
+[node name="center2" type="Sprite2D" parent="feedbacked" unique_id=1288235388]
+texture = ExtResource("2_2s87s")
+
+[node name="center5" type="Sprite2D" parent="feedbacked" unique_id=1472358450]
+texture = ExtResource("2_2s87s")
+
+[node name="center3" type="Sprite2D" parent="feedbacked" unique_id=437891832]
+texture = ExtResource("2_2s87s")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=671456286]
+offset_left = 250.0
+offset_top = 170.0
+offset_right = 290.0
+offset_bottom = 210.0
+
+[node name="diagnose" parent="." unique_id=1150807585 instance=ExtResource("3_chtls")]
+position = Vector2(215, 42)
+
+[node name="impacts" type="Node2D" parent="." unique_id=231405868]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1175086773]
+stream = ExtResource("4_crpvh")
+volume_db = -30.0

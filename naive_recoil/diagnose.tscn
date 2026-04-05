@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dl0pwhuwfancd"]
+
+[ext_resource type="Script" uid="uid://bka1sb250vjdb" path="res://diagnose.gd" id="1_2lcu4"]
+
+[node name="diagnose" type="Node2D"]
+script = ExtResource("1_2lcu4")
+
+[node name="labels" type="Node2D" parent="."]
