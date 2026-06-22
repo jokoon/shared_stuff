@@ -58,7 +58,6 @@ func create_impact(pt: Vector2):
     _tween.tween_property(impact, "modulate:a", .0, impact_lifespan)
     _tween.tween_callback(impact.queue_free)
 
-
 @export_range(0, 1, 0.001) var punch: float = 0.3:
     set(val):
         punch = val
@@ -83,9 +82,6 @@ func upd_lateral(dt: float):
             -1., 1)
     else:
         recoil_lateral = 0
-
-    pass
-
 
 # godot funcs
 func upd(delta: float):
@@ -117,6 +113,7 @@ func upd(delta: float):
             recoil_lateral += recoil_side * ease(recoil_lin, 3) * punch
         # ammunition
         ammo_clip -= 1
+        upd_lateral(delta)
 func _process(dt:float):
     upd(dt)
 
